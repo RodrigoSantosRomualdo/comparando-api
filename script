@@ -1,0 +1,13 @@
+<!-- script necessario para configurar tamanho do chatbot -->
+<script src="https://medsenior-lgpd.herokuapp.com/styledChatSize.js"></script>
+
+
+<!-- iframe do chatbot -->
+<iframe style="
+  position: fixed;
+  border: none;
+  right: 90px;
+  bottom: 20px;
+  z-index: 99999999999;"   
+  id="intelliframe" src="https://medsenior-lgpd.herokuapp.com/iframe" onload="sendScreenSize()" allowfullscreen>
+</iframe>
