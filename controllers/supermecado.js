@@ -22,7 +22,7 @@ controller.novo = async (req, res) => {
 controller.location = async (req, res) => {
    //console.log('req PASSOU location', req.body)
    
-   let maxDistance = 12000;
+   let maxDistance = 300000;
    //let coordinates = [-20.255341918373244, -40.29290930653548],
    if (req.body.maxDistance) {
       console.log('ENTROUNO IF')

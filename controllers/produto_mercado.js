@@ -49,7 +49,7 @@ controller.buscarIdSup_UnidadeMed_Desc = async (req, res) => {
    console.log('obterPelaDescricao PRODUTO MERCADO buscarIdSup_UnidadeMed_Desc')
    console.log(req.body)
    const {id, unidade_medida, descricao} = req.body; 
-   let maxDistance = 3000; 
+   let maxDistance = 300000; 
    let obj
    console.log('UNIDADE MEDIDA --> ',req.body.unidade_medida)
 
