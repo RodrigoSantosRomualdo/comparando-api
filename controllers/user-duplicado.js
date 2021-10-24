@@ -211,7 +211,7 @@ controller.findlista = async (req, res) => {
    console.log('obterPelaDescricao PRODUTO MERCADO findlista')
    console.log(req.body)
    const {id, unidade_medida, descricao} = req.body; 
-   let maxDistance = 300000; 
+   let maxDistance = 300; 
    let obj
    console.log('UNIDADE MEDIDA ',req.body.unidade_medida)
    

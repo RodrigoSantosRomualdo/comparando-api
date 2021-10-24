@@ -22,12 +22,20 @@ controller.novo = async (req, res) => {
 controller.location = async (req, res) => {
    console.log('req PASSOU location COMBUSTIVEL', req.body)
    
-   let maxDistance = 300000;
+   let { maxDistance } = req.body;
    //let coordinates = [-20.255341918373244, -40.29290930653548],
-   if (req.body.maxDistance) {
-      console.log('ENTROUNO IF')
-      maxDistance = req.body.distancia;
-   }  
+   
+   if (req.body.maxDistance === null) {
+      console.log('ENTROUNO IF --------------__>>>>>>>..')
+      maxDistance = 7000
+   }  else {
+      console.log('ENTROUNO NO ELSE --------------__>>>>>>>..')
+         maxDistance = parseInt(maxDistance)
+         maxDistance = maxDistance * 1000
+     
+      console.log('maxDistance::::::::::: ', maxDistance)
+      maxDistance = parseInt(maxDistance)
+   }
    //const id = req.params.id
 
    try {

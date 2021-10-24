@@ -20,14 +20,22 @@ controller.novo = async (req, res) => {
 // FAZENDO PARA VERIFICAR O LOCAL DE CADA ESTABELECIMENTO
 
 controller.location = async (req, res) => {
-   //console.log('req PASSOU location', req.body)
+   console.log('req PASSOU location', req.body)
    
-   let maxDistance = 300000;
+   let { maxDistance } = req.body;
    //let coordinates = [-20.255341918373244, -40.29290930653548],
-   if (req.body.maxDistance) {
-      console.log('ENTROUNO IF')
-      maxDistance = req.body.distancia;
-   }  
+   
+   if (req.body.maxDistance === null) {
+      console.log('ENTROUNO IF --------------__>>>>>>>..')
+      maxDistance = 7000
+   }  else {
+      console.log('ENTROUNO NO ELSE --------------__>>>>>>>..')
+         maxDistance = parseInt(maxDistance)
+         maxDistance = maxDistance * 1000
+     
+      console.log('maxDistance::::::::::: ', maxDistance)
+      maxDistance = parseInt(maxDistance)
+   }
    //const id = req.params.id
 
    try {
@@ -66,7 +74,7 @@ controller.location = async (req, res) => {
       if(obj) { // obj foi encontrado
          //res.send(obj) // HTTP 200
          res.send(obj)
-         console.log(obj)
+         //console.log(obj)
       }
       else {
          // HTTP 404: Not found

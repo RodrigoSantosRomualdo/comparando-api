@@ -49,7 +49,7 @@ controller.buscarIdSup_UnidadeMed_Desc = async (req, res) => {
    console.log('obterPelaDescricao PRODUTO MERCADO buscarIdSup_UnidadeMed_Desc')
    console.log(req.body)
    const {id, unidade_medida, descricao} = req.body; 
-   let maxDistance = 300000; 
+   let maxDistance = 300; 
    let obj
    console.log('UNIDADE MEDIDA --> ',req.body.unidade_medida)
 
@@ -62,6 +62,7 @@ controller.buscarIdSup_UnidadeMed_Desc = async (req, res) => {
      obj = await ProdutoMercado.find({supermecado: id, descricao: new RegExp(descricao, 'i')}).sort({preco_venda: 1}).populate('supermecado')
      //console.log('OBJ 2', obj)
    }   
+   console.log('idddd ', id.length)
      //console.log('obj ',obj)
       if(id.length === 0) { // obj foi encontrado
          console.log('ENTREOU AQUI')
