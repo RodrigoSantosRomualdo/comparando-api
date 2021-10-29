@@ -42,6 +42,9 @@ const esquema = mongoose.Schema({
       type: String,
       //required: false
    },
+   city: {
+      type: String,
+   },
    location: {
       type: { type: String},
       coordinates: [],
